@@ -10,7 +10,9 @@ display_bag_items();
 
 function displayItems(){
 let itemsContainerEle = document.querySelector('.items-container');
-
+if(!itemsContainerEle){
+    return;
+}
 items.forEach((num)=>{
 itemsContainerEle.innerHTML += `<div class="item-container">
     <img class="item-image" src="/images/Products/${num.image}" alt="item image">
