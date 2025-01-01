@@ -6,7 +6,7 @@ box-sizing: border-box;
 header{
     background-color: #ffffff;
     height: 80px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,11 +78,13 @@ border-radius: 0px 4px 4px 0px ;
     min-width: 200px;
     display: flex;
     justify-content: space-evenly;
+
 }
 .action_container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
 }
 
 .banner_container{
@@ -213,4 +215,20 @@ footer{
     padding: 5px 1px;
     margin: 8px 1px;
     cursor:pointer;
+}
+.bag-item-count{
+    background-color: #f16565;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 18px;
+    padding: 0 6px;
+    height: 18px;
+    position: relative;
+    border-radius:40%;
+    font-size: 12px;
+    color: #fff;
+    left: 13px;
+    top: -44px;
+    font-weight: 700;
+    cursor: pointer;
 }

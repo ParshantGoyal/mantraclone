@@ -1,11 +1,13 @@
-let addTo =[]
-function addToBag(id){
- addTo.push(id);
- console.log(addTo);
+let addTo;
+onload();
+
+function onload(){
+let addTostr = localStorage.getItem('addTo');
+addTo = addTostr ? JSON.parse(addTostr) : [];
+    displayItems();
+display_bag_items();
 }
 
-
-displayItems()
 function displayItems(){
 let itemsContainerEle = document.querySelector('.items-container');
 
@@ -25,3 +27,21 @@ itemsContainerEle.innerHTML += `<div class="item-container">
 });
 }
 
+
+displayItems();
+
+function addToBag(id){
+ addTo.push(id);
+ console.log(addTo);
+ localStorage.setItem('addTo',JSON.stringify(addTo))
+ display_bag_items();
+}
+function display_bag_items(){
+    let displayEle = document.querySelector('.bag-item-count');
+    if(addTo.length >0){
+        displayEle.style.visibility = 'visible';
+        displayEle.innerText =`${addTo.length}`;
+    }else{displayEle.style.visibility = 'hidden';}
+    // addTo ? displayEle.innerText =`${addTo.length}`: 0;    
+}
+display_bag_items();
